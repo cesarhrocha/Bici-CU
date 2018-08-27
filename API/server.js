@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/BiciCU', { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var routes = require('./routes/userRoutes'); //importing route
+var routes = require('./routes/'); //importing route
 routes(app); //register the route
 
 app.listen(port);
