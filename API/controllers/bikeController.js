@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 
 exports.list_all_bikes = function(req, res) {
   Bike = mongoose.model('Bikes');
-  User.find({}, function(err, task) {
+  Bike.find({}, function(err, task) {
     if (err)
       res.send(err);
     res.json(task);
