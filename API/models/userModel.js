@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 
 var UserSchema = new Schema({//Creación del esquema de usuarios
+  _id: Schema.Types.ObjectId,
   name: {
     type: String,
     required: 'Enter the users name'
