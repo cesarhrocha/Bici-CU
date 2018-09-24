@@ -9,6 +9,9 @@ import {CardAl1}from './mainalumno/mainalumno.component'
 import {Registro} from './registro/registro.component'
 import {InicioAl} from'./inicio-al/inicio-al.component'
 import {Registrov} from './registrov/registrov.component'
+import {Entrada} from './entrada/entrada.component'
+import {Salida} from './salida/salida.component'
+
 
 import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -17,6 +20,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import { AppRoutingModule } from './app-routing.module';
+import { MainVigilante } from './mainvigilante/mainvigilante.component';
+import {MatListModule} from '@angular/material/list';
+import { InicioVig } from './iniciovig/iniciovig.component';
+import { SalidaVal } from './salidaval/salidaval.component';
+import { EntradaVal } from './entradaval/entradaval.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +35,13 @@ import {MatTabsModule} from '@angular/material/tabs';
     CardAl1,
     Registro,
     InicioAl,
-    Registrov
+    Registrov,
+    MainVigilante,
+    Entrada,
+    Salida,
+    InicioVig,
+    SalidaVal,
+    EntradaVal
   ],
   imports: [
     BrowserModule,
@@ -37,7 +52,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    AppRoutingModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
