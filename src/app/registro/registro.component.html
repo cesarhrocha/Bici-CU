@@ -1,20 +1,58 @@
-<mat-card>Ingresa tus datos
-    <br>
-    <mat-form-field>
-            <input matInput placeholder="Nombre completo">
-          </mat-form-field>
-          <br>
-    <mat-form-field>
-            <input matInput placeholder="Matrícula">
-          </mat-form-field>
-          <br>
-    <mat-form-field>
-            <input matInput placeholder="Facultad">
-          </mat-form-field>
-          <br>
+<mat-card class="cardForm">
+  <form [formGroup]="form" (submit)="addUser()">
       <mat-form-field>
-            <input matInput placeholder="Contraseña">
-          </mat-form-field>
-          <br>     
-    <button mat-button routerLink="/inicio-al" color="primary">Registrarte</button>
+        <textarea matInput type="text" formControlName="nombre" placeholder="Nombre">  </textarea>
+        <mat-error *ngIf="form.get('nombre').invalid">Escribe el nombre</mat-error>
+      </mat-form-field>  
+
+      <mat-form-field>
+        <textarea matInput type="text" formControlName="matricula" placeholder="Matrícula">  </textarea>
+        <mat-error *ngIf="form.get('matricula').invalid">Ingresa tu matrícula</mat-error>
+      </mat-form-field>  
+
+       <mat-form-field>
+        <textarea matInput type="text" formControlName="facultad" placeholder="Facultad">  </textarea>
+        <mat-error *ngIf="form.get('facultad').invalid">Ingresa la facultad a la que correspondes</mat-error>
+      </mat-form-field>  
+
+  <mat-form-field>
+    <textarea matInput type="mail" formControlName="correo" placeholder="Correo">  </textarea>
+    <mat-error *ngIf="form.get('correo').invalid">Ingresa tu correo electrónico</mat-error>
+  </mat-form-field>  
+
+      <mat-form-field>
+        <textarea matInput type="password" formControlName="contrasena" placeholder="Contraseña">  </textarea>
+        <mat-error *ngIf="form.get('contrasena').invalid">Designa una contraseña</mat-error>
+      </mat-form-field>  
+   
+    <button mat-raised-button color="accent" type="submit">Registrarte</button>
+  </form>
 </mat-card>
+
+  <!-- <mat-card class="cardForm">
+  <form [formGroup]="form" (submit)="addIdent()">
+
+ <mat-form-field>
+      <textarea matInput type="text" formControlName="nombre" placeholder="Nombre">  </textarea>
+      <mat-error *ngIf="form.get('nombre').invalid">Por favor, escribe el nombre</mat-error>
+    </mat-form-field>
+
+    <mat-radio-group class="radioGroup" formControlName="sexo">
+      <span>Sexo</span>
+      <mat-radio-button class="radioButton" value="M">M</mat-radio-button>
+      <mat-radio-button class="radioButton" value="F">F</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-radio-group class="radioGroup" formControlName="estadoSocioeconomico">
+      <span>Estado socioeconómico</span>
+      <mat-radio-button class="radioButton" value="A">A</mat-radio-button>
+      <mat-radio-button class="radioButton" value="B">B</mat-radio-button>
+      <mat-radio-button class="radioButton" value="C">C</mat-radio-button>
+      <mat-radio-button class="radioButton" value="D">D</mat-radio-button>
+    </mat-radio-group>
+    
+ 
+
+    <button mat-raised-button color="accent" type="submit">Guardar</button>
+  </form>
+-->

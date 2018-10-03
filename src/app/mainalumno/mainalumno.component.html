@@ -1,13 +1,15 @@
 <mat-card>¡Bienvenido Alumno!
     <br>
-    <mat-form-field>
+    <form [formGroup]="form" (submit)="addUser()">
+    <mat-form-field formControlName="matricula">
             <input matInput placeholder="Ingresa tu Matrícula">
-          </mat-form-field>
+    </mat-form-field>
           <br>
-          <mat-form-field>
+    <mat-form-field formControlName="contrasena">
             <input matInput placeholder="Ingresa tu Contraseña">
-          </mat-form-field>
+    </mat-form-field>
           <br>
+    </form>
     <button mat-button routerLink="/registroal"color="primary">Registrarte</button>
     <button mat-button routerLink="/inicio-al"color="primary">Ingresar</button>
 </mat-card>

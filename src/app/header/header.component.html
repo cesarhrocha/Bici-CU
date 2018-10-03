@@ -1,5 +1,6 @@
 <mat-toolbar  color="primary">Bici
-    <mat-icon routerLink="" >home</mat-icon>
-
+    <mat-icon *ngIf="main" routerLink="" >home</mat-icon>
+    <mat-icon *ngIf="esEstudiante" (click)="estudiante()" routerLink="/mainalumno" >home</mat-icon>
+    <mat-icon *ngIf="esVigilante" (click)="vigilnte()" routerLink="/mainvigilante" >home</mat-icon>
 </mat-toolbar>
 

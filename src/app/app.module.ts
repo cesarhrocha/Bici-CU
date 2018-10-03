@@ -12,8 +12,7 @@ import {Registrov} from './registrov/registrov.component'
 import {Entrada} from './entrada/entrada.component'
 import {Salida} from './salida/salida.component'
 
-
-import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -26,6 +25,7 @@ import {MatListModule} from '@angular/material/list';
 import { InicioVig } from './iniciovig/iniciovig.component';
 import { SalidaVal } from './salidaval/salidaval.component';
 import { EntradaVal } from './entradaval/entradaval.component';
+
 
 @NgModule({
   declarations: [
@@ -54,9 +54,11 @@ import { EntradaVal } from './entradaval/entradaval.component';
     MatIconModule,
     MatTabsModule,
     AppRoutingModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

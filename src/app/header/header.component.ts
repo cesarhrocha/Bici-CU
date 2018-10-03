@@ -6,7 +6,27 @@ import {Component} from '@angular/core';
   templateUrl: 'header.component.html',
   styleUrls: ['header.component.css'],
 })
-export class ToolbarOverviewExample {}
+export class ToolbarOverviewExample {
+  main: boolean = true;
+  esEstudiante: boolean = false;
+  esVigilante: boolean = false;
+
+  
+
+
+  estudiante() {
+    this.esEstudiante = true;
+    this.main = false;
+    this.esVigilante = false;
+  }
+  vigilante() {
+    this.esEstudiante = false;
+    this.main = false;
+    this.esVigilante = true;
+  }
+
+
+}
 
 
 
