@@ -1,14 +1,15 @@
 <mat-card>¡Bienvenido Alumno!
     <br>
     <form [formGroup]="form" (submit)="addUser()">
-    <mat-form-field formControlName="matricula">
-            <input matInput placeholder="Ingresa tu Matrícula">
-    </mat-form-field>
-          <br>
-    <mat-form-field formControlName="contrasena">
-            <input matInput placeholder="Ingresa tu Contraseña">
-    </mat-form-field>
-          <br>
+        <mat-form-field>
+            <textarea matInput type="text" formControlName="matricula" placeholder="Matricula">  </textarea>
+            <mat-error *ngIf="form.get('matricula').invalid">Por favor, escribe el nombre</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+              <textarea matInput type="text" formControlName="contrasena" placeholder="Contraseña">  </textarea>
+              <mat-error *ngIf="form.get('contrasena').invalid">Por favor, escribe el nombre</mat-error>
+          </mat-form-field>
     </form>
     <button mat-button routerLink="/registroal"color="primary">Registrarte</button>
     <button mat-button routerLink="/inicio-al"color="primary">Ingresar</button>

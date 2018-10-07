@@ -17,4 +17,7 @@ export class CardAl1 implements OnInit{
       contrasena: new FormControl(null, { validators: [Validators.required] }),
     });
   }
+  addUser() {
+
+  }
 }
