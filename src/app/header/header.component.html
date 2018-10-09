@@ -1,6 +1,7 @@
 <mat-toolbar  color="primary">Bici
     <mat-icon *ngIf="main" routerLink="" >home</mat-icon>
-    <mat-icon *ngIf="esEstudiante" (click)="estudiante()" routerLink="/mainalumno" >home</mat-icon>
-    <mat-icon *ngIf="esVigilante" (click)="vigilnte()" routerLink="/mainvigilante" >home</mat-icon>
+    <mat-icon *ngIf="!bandera" (click)="esVigilante()" routerLink="/mainvigilante" >home</mat-icon>
+    <mat-icon *ngIf="bandera" (click)="esAlumno()" routerLink="/mainalumno" >home</mat-icon>
+   
 </mat-toolbar>
 

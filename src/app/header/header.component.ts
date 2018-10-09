@@ -1,31 +1,25 @@
 import {Component} from '@angular/core';
-
-
+import { BotonService } from '../main/main.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'toolbar-overview-example',
   templateUrl: 'header.component.html',
   styleUrls: ['header.component.css'],
 })
 export class ToolbarOverviewExample {
-  main: boolean = true;
-  esEstudiante: boolean = false;
-  esVigilante: boolean = false;
+  bandera: Boolean;
+  private botonSub: Subscription;
 
+  constructor(private botonService: BotonService) {}
   
-
-
-  estudiante() {
-    this.esEstudiante = true;
-    this.main = false;
-    this.esVigilante = false;
+  escuchar() {
+    this.botonSub = this.botonService.checkBandera()
+    .subscribe( (boo: Boolean) => {
+      this.bandera = boo;
+    })
   }
-  vigilante() {
-    this.esEstudiante = false;
-    this.main = false;
-    this.esVigilante = true;
-  }
-
-
+  
+  
 }
 
 
