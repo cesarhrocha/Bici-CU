@@ -7,20 +7,25 @@ module.exports.register = function(req, res) {
 
     user.name = req.body.name;
     user.secondName = req.body.secondName;
-    user.fullName = user.name + '' + user.secondName;
     user.email = req.body.email;
     user.institutionalId = req.body.institutionalId;
-    user.type = req.body.type;
 
     user.setPassword(req.body.password);
 
     user.save(function(err) {
+      if(err){
+        res.status(404).json(err);
+        return;
+      }
+      else{
         var token;
         token = user.generateJwt();
         res.status(200);
         res.json({
         "token" : token
         });
+      }
+        
     });
 };
 

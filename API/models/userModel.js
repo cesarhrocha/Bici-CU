@@ -5,7 +5,6 @@ var Schema = mongoose.Schema;
 var jwt = require('jsonwebtoken');
 
 var UserSchema = new Schema({//Creación del esquema de usuarios
-  _id: Schema.Types.ObjectId,
   name: {
     type: String,
     required: true
@@ -13,10 +12,6 @@ var UserSchema = new Schema({//Creación del esquema de usuarios
   secondName: {
       type: String,
       required: true
-  },
-  fullName: {
-    type: String,
-    required: true
   },
   institutionalId: {
     type: String,
