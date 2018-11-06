@@ -2,23 +2,41 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
-  User = require('./models/userModel'), //created model loading here
-  Bike = require('./models/bikeModel'), //created model loading here
+  passport = require('passport'),
+  User = require('./models/userModel'),
+  Bike = require('./models/bikeModel'),
+  bodyParser = require('body-parser'),
+  jwt = require('express-jwt'),
+  auth = jwt({
+  secret: 'lospajarossonchidosxdxddxxd',
+  userProperty: 'payload'
+});
 
-  bodyParser = require('body-parser');
+mongoose.set('useFindAndModify', false);
 
-// mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/BiciCU', { useNewUrlParser: true }); 
+mongoose.connect('mongodb://localhost/BiciCU', { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var userRoutes = require('./routes/userRoutes'); //importing route
-userRoutes(app); //register the route
+app.use(passport.initialize());
+app.use('/api', routesApi);
 
-var bikeRoutes = require('./routes/bikeRoutes'); //importing route
-bikeRoutes(app); //register the route
+var userRoutes = require('./routes/userRoutes');
+userRoutes(app);
+
+var bikeRoutes = require('./routes/bikeRoutes');
+bikeRoutes(app);
+
+router.get('/profile', auth, ctrlProfile.profileRead);
+
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401);
+    res.json({"message" : err.name + ": " + err.message});
+  }
+});
 
 app.listen(port);
 

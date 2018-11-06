@@ -1,8 +1,5 @@
-'use strict';
-
-
 var mongoose = require('mongoose'),
-  User = mongoose.model('Users');
+  User = mongoose.model('User');
 
 exports.list_all_users = function(req, res) {
   User.find({}, function(err, task) {
@@ -11,9 +8,6 @@ exports.list_all_users = function(req, res) {
     res.json(task);
   });
 };
-
-
-
 
 exports.create_a_user = function(req, res) {
   var new_user = new User(req.body);
@@ -24,7 +18,6 @@ exports.create_a_user = function(req, res) {
   });
 };
 
-
 exports.read_a_user = function(req, res) {
   User.findById(req.params.userId, function(err, task) {
     if (err)
@@ -33,7 +26,6 @@ exports.read_a_user = function(req, res) {
   });
 };
 
-
 exports.update_a_user = function(req, res) {
   User.findOneAndUpdate({_id: req.params.userId}, req.body, {new: true}, function(err, task) {
     if (err)
@@ -41,7 +33,6 @@ exports.update_a_user = function(req, res) {
     res.json(task);
   });
 };
-
 
 exports.delete_a_user = function(req, res) {
 	User.remove({_id: req.params.userId}, function(err, task) {
