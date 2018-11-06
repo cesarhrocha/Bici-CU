@@ -1,22 +1,22 @@
 <div class="container">
   <div class="row">
-    
-     <div class="col-md-6">
-
-      <h1 class="form-signin-heading">Your profile</h1>
-
-      <div class="form-horizontal">
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Full name</label>
-          <p class="form-control-static">{{ details?.name }}</p>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Email</label>
-          <p class="form-control-static">{{ details?.email }}</p>
-        </div>
-      </div>
-
+    <div class="col-md-3"> 
     </div>
 
+    <div class="col-md-6">
+      <h1 class="form-signin-heading">Perfil</h1>
+
+      <h6>Nombre</h6>
+      <p class="form-control-static">{{ details?.name }} {{ details?.secondName }}</p>
+
+      <h6>Maatrícula</h6>
+      <p class="form-control-static">{{ details?.institutionalId }}</p>
+
+      <h6>Correo electrónico</h6>
+      <p class="form-control-static">{{ details?.email }}</p>
+
+      <h6>Tipo de perfil</h6>
+      <p class="form-control-static">{{ details?.userType }}</p>
+    </div>
   </div>
 </div>

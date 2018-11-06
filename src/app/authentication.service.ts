@@ -10,6 +10,7 @@ export interface UserDetails {
   name: string;
   secondName: string;
   institutionalId: string;
+  userType: string;
   exp: number;
   iat: number;
 }
@@ -24,6 +25,7 @@ export interface TokenPayload {
   secondName?: string;
   institutionalId?: string;
   name?: string;
+  userType?: string;
 }
 
 @Injectable()

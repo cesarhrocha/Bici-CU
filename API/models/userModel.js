@@ -26,10 +26,8 @@ var UserSchema = new Schema({//Creación del esquema de usuarios
   hash: String,
   salt: String,
   userType: {
-    type: [{
-      type: String,
-      enum: ['Student', 'Vigilant', 'Administrator']
-    }]
+    type: String,
+    required: true
   },
   createdDate: {
     type: Date,
@@ -55,6 +53,9 @@ UserSchema.methods.generateJwt = function() {
     _id: this._id,
     email: this.email,
     name: this.name,
+    secondName: this.secondName,
+    institutionalId: this.institutionalId,
+    userType: this.userType,
     exp: parseInt(expiry.getTime() / 1000),
   }, "lospajarossonchidosxdxddxxd"); // DO NOT KEEP YOUR SECRET IN THE CODE!
 };

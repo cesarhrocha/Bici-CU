@@ -11,7 +11,8 @@ export class RegisterComponent {
     name: '',
     secondName: '',
     password: '',
-    institutionalId: ''
+    institutionalId: '',
+    userType: ''
   };
 
   constructor(private auth: AuthenticationService, private router: Router) {}

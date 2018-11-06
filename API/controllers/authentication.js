@@ -9,6 +9,7 @@ module.exports.register = function(req, res) {
     user.secondName = req.body.secondName;
     user.email = req.body.email;
     user.institutionalId = req.body.institutionalId;
+    user.userType = req.body.userType;
 
     user.setPassword(req.body.password);
 
