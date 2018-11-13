@@ -1,0 +1,23 @@
+<form (submit)="bikeRegister(postForm)" #postForm="ngForm" id="bikeRegisterForm">
+    <div class="form-group">
+      <label for="brand">Marca</label>
+      <input type="text" class="form-control" name="brand" placeholder="Marca" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="model">Modelo</label>
+      <input type="text" class="form-control" name="model" placeholder="Modelo" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="size">Rodada</label>
+      <input type="text" class="form-control" name="size" placeholder="Rodada" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="color">Color</label>
+      <input type="text" class="form-control" name="color" placeholder="" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="institutionalId">Matrícula</label>
+      <input type="text" class="form-control" name="institutionalId" placeholder="" ngModel>
+    </div>
+    <button type="submit" class="btn btn-default">Registrar</button>
+  </form>

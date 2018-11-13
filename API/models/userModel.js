@@ -1,43 +1,33 @@
 'use strict';
 var mongoose = require('mongoose');//Declaración de mongoose
+var crypto = require('crypto');
 var Schema = mongoose.Schema;
-
+var jwt = require('jsonwebtoken');
 
 var UserSchema = new Schema({//Creación del esquema de usuarios
   name: {
     type: String,
-    required: 'Enter the users name'
+    required: true
   },
   secondName: {
       type: String,
-      required: 'Enter the users second name'
-  },
-  fullName: {
-    type: String,
-    required: 'Enter the users full name'
+      required: true
   },
   institutionalId: {
     type: String,
-    required: 'Enter the users institutional identification number'
+    unique: true,
+    required: true
   },
   email: {
     type: String,
-    required: 'Enter the users emailemail'
+    unique: true,
+    required: true
   },
-  password: {
-    type: String,
-    required: 'Enter the users password'
-  },
-  picture: {
-    type: String,
-    default: 'default.jpg'
-  },
+  hash: String,
+  salt: String,
   userType: {
-    type: [{
-      type: String,
-      enum: ['Student', 'Vigilant'],
-      default: ['Student']
-    }]
+    type: String,
+    required: true
   },
   createdDate: {
     type: Date,
@@ -45,4 +35,29 @@ var UserSchema = new Schema({//Creación del esquema de usuarios
   }
 });
 
-module.exports = mongoose.model('Users', UserSchema);
+UserSchema.methods.setPassword = function(password) {
+  this.salt = crypto.randomBytes(16).toString('hex');
+  this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
+};
+
+UserSchema.methods.validPassword = function(password) {
+  var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
+  return this.hash === hash;
+};
+
+UserSchema.methods.generateJwt = function() {
+  var expiry = new Date();
+  expiry.setDate(expiry.getDate() + 7);
+
+  return jwt.sign({
+    _id: this._id,
+    email: this.email,
+    name: this.name,
+    secondName: this.secondName,
+    institutionalId: this.institutionalId,
+    userType: this.userType,
+    exp: parseInt(expiry.getTime() / 1000),
+  }, "lospajarossonchidosxdxddxxd"); // DO NOT KEEP YOUR SECRET IN THE CODE!
+};
+
+module.exports = mongoose.model('User', UserSchema);

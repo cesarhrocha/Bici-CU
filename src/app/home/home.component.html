@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 text-center">
+      
+      <h1>Bici CU</h1>
+
+      <div class="row" *ngIf="!auth.isLoggedIn()">
+        <div class="col-md-6 text-right">
+          <a routerLink="/login">Iniciar sesión</a>
+        </div>
+
+        <div class="col-md-6 text-right">
+          <a routerLink="/register">Registrarse</a>
+        </div>        
+      </div>
+
+    </div>
+  </div>
+</div>
