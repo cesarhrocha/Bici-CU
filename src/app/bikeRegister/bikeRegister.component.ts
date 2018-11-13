@@ -14,7 +14,6 @@ export class BikeRegisterComponent {
     constructor(private _bike: BikeService){}
 
     bikeRegister(form: NgForm){
-        console.log(form);
         this._bike.bikeRegistration(form)
         .subscribe((res)=>{
             console.log(res);
