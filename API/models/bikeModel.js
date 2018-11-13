@@ -4,21 +4,27 @@ var Schema = mongoose.Schema;
 
 
 var BikeSchema = new Schema({//Creación del esquema de usuarios
+  brand: {
+    type: String,
+    required: true
+  },
   model: {
     type: String,
-    required: 'Enter the bikes model'
+    required: true
   },
   size: {
       type: String,
-      required: 'Enter the bikes size'
+      required: true
   },
   color: {
     type: String,
-    required: 'Enter the bikes color'
+    required: true
   },
-  owner: [{
-      type: Schema.Types.ObjectId, ref: 'Users'
-    }],
+  institutionalId: {
+    type: String,
+    required: true,
+    unique: true
+  },
   createdDate: {
     type: Date,
     default: Date.now

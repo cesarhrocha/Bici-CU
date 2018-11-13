@@ -1,6 +1,3 @@
-'use strict';
-
-
 var mongoose = require('mongoose'),
   Bike = mongoose.model('Bikes');
 
