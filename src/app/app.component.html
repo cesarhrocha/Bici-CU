@@ -22,7 +22,12 @@
       </li>
     </ul>
 
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf="auth.isLoggedIn()">
+      <li class="nav-item"><a class="nav-link" routerLink="/escanear">Escanear</a></li>
+
+    </ul>
+
   </div>
-</nav>  
+</nav>
 
 <router-outlet></router-outlet>

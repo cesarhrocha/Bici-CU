@@ -32,7 +32,8 @@ var UserSchema = new Schema({//Creación del esquema de usuarios
   createdDate: {
     type: Date,
     default: Date.now
-  }
+  },
+
 });
 
 UserSchema.methods.setPassword = function(password) {

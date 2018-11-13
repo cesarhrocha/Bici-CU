@@ -1,0 +1,45 @@
+header{
+    text-align: center;
+    font-size: 200%;
+    color: white;
+    background-color: #003B5C;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body{
+    text-align: center;
+}
+
+.button{
+    background-color: #00B5E2;
+    color: white;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 250%;
+    padding: 100px 100px;
+}
+
+.button2{
+    color: #003B5C;
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    font-size: 120%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+div{
+    text-align: center;
+    width: 29%;
+    margin:0 auto;
+}
+
+.form-group{
+    text-align: left;
+}
+
+

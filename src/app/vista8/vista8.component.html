@@ -1,0 +1,36 @@
+<form class = "orden">
+  <p class = "a1">Registro de Bicicletas</p>
+
+  <p class = "a2">Marca</p>
+   <mat-form-field class = "orden2">
+     <textarea matInput></textarea>
+  </mat-form-field>
+  <br><br><br>
+  <p class = "a2">Rodada</p><br><br>
+  <mat-form-field class = "orden2">
+    <select matNativeControl required>
+      <option value="rodada1">Rodada1</option>
+      <option value="rodada2">Rodada2</option>
+      <option value="rodada3">Rodada3</option>
+      <option value="rodada4">Rodada4</option>
+    </select>
+  </mat-form-field>
+  <br><br><br>
+  <p class = "a2">Color</p>
+  <mat-form-field class = "orden2">
+    <textarea matInput></textarea>
+  </mat-form-field>
+
+  <p class = "a2">No. de Serie</p>
+  <mat-form-field class = "orden2">
+   <textarea matInput></textarea>
+  </mat-form-field>
+
+  <p class = "a2">Matrícula</p>
+  <mat-form-field class = "orden2">
+   <textarea matInput></textarea>
+  </mat-form-field>
+
+  <br><br><button mat-raised-button color="primary" [routerLink]="['']">Guardar</button><br><br>
+
+  </form>
