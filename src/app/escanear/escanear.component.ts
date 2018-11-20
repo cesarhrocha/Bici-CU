@@ -10,7 +10,7 @@ import { EntranceService } from '../entrance.service';
 })
 export class EscanearComponent implements OnInit {
   form: FormGroup;
-  escaneo: true;
+  escaneo = true;
   details: UserDetails;
   constructor(private auth: AuthenticationService,
     private scan: EntranceService) { }
@@ -27,6 +27,10 @@ export class EscanearComponent implements OnInit {
           validators: [Validators.required, Validators.minLength(3)]
         })
       });
+    }
+
+    escanear() {
+      this.escaneo = false;
     }
 
     checkIsInside() {

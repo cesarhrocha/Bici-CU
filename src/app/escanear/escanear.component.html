@@ -11,7 +11,7 @@
   </header>
 
   <body>
-      <button *ngIf="escaneo" type="button" class="button">
+      <button *ngIf="escaneo" (click)="escanear()" type="button" class="button">
       ESCANEAR<br>
       QR
     </button>

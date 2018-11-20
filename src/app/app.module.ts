@@ -14,9 +14,11 @@ import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { EscanearComponent } from './escanear/escanear.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: InicioComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'bikeRegister', component: BikeRegisterComponent, canActivate: [AuthGuardService] },
@@ -32,7 +34,8 @@ const routes: Routes = [
     RegisterComponent,
     BikeRegisterComponent,
     HomeComponent,
-    EscanearComponent
+    EscanearComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
