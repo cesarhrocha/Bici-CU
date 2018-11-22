@@ -1,0 +1,53 @@
+#navbarData{
+  background-color: black;
+  color: #00B5E2;
+}
+
+a {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	background: #3f3030;
+	color: #3f3030;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1.8rem 2.4rem;
+	cursor: pointer;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: #fff;
+		content: '';
+		transform: rotate(-90deg) translate(-50%, -100%);
+		transform-origin: top left;
+		transition: transform .3s;
+	}
+
+	&:hover:before {
+		transform: rotate(0) translate(0);
+	}
+
+	&:after {
+		position: absolute;
+		top: 2px;
+		bottom: 2px;
+		left: 2px;
+		right: 2px;
+		background: #fff;
+		border: #3f3030 solid 4px;
+		color: #3f3030;
+		content: 'Hover';
+		font-family: 'Montserrat', sans-serif;
+		font-size: 3rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		padding: 1.4rem 1.8rem;
+	}
+}

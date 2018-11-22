@@ -6,7 +6,7 @@ import { EntranceService } from '../entrance.service';
 @Component({
   selector: 'app-vista5',
   templateUrl: './escanear.component.html',
-  styleUrls: ['./escanear.component.css']
+  styleUrls: ['./escanear.component.scss']
 })
 export class EscanearComponent implements OnInit {
   form: FormGroup;

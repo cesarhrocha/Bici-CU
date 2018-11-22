@@ -1,0 +1,134 @@
+header{
+    text-align: center;
+    font-size: 200%;
+    color: white;
+    background-color: #003B5C;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body{
+    text-align: center;
+}
+
+.button{
+    background-color: #00B5E2;
+    color: white;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 250%;
+    padding: 100px 100px;
+}
+
+.button2{
+    color: #003B5C;
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    font-size: 120%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+div{
+    text-align: center;
+    width: 29%;
+    margin:0 auto;
+}
+
+.form-group{
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+
+.form-control {
+  height: auto!important;
+padding: 8px 12px !important;
+}
+span.input-group-addon i {
+  color: #009edf;
+  font-size: 17px;
+}
+
+.login-button{
+margin-top: 5px;
+}
+
+.login-register{
+font-size: 11px;
+text-align: center;
+}
+
+.input-group {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+
+.container{
+  background-color: #003B5C;
+  position: absolute;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+}
+
+.a-escanear {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	background:  #003B5C;
+	color:  white;
+
+	font-size: 3rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1.8rem 2.4rem;
+  cursor: pointer;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: white;
+		content: '';
+		transform: rotate(-90deg) translate(-50%, -100%);
+		transform-origin: top left;
+		transition: transform .3s;
+	}
+
+	&:hover:before {
+		transform: rotate(0) translate(0);
+	}
+
+	&:after {
+		position: absolute;
+		top: 2px;
+		bottom: 2px;
+		left: 2px;
+		right: 2px;
+		background: #00B5E2;
+		border:#003B5C solid 4px;
+		color: white;
+		content: 'Escanear QR';
+		font-size: 3rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		padding: 1.4rem 1.8rem;
+	}
+}
