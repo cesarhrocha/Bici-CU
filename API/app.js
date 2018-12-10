@@ -9,15 +9,27 @@ var cors = require('cors');
 var passport = require('passport');
 
 // [SH] Bring in the data model
-require('./api/models/db');
+require('./models/db');
 // [SH] Bring in the Passport config after model is defined
-require('./api/config/passport');
+require('./config/passport');
 
 // [SH] Bring in the routes for the API (delete the default routes)
-var routesApi = require('./api/routes/index');
+var routesApi = require('./routes/index');
 
 var app = express();
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+  );
+  next();
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

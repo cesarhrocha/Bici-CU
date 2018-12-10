@@ -1,11 +1,15 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost/BiciCU';
-if (process.env.NODE_ENV === 'production') {
-  dbURI = process.env.MONGOLAB_URI;
-}
+var dbURI = 'mongodb+srv://Fer:arbiter117@cluster0-64fqv.mongodb.net/test?retryWrites=true';
 
-mongoose.connect(dbURI);
+
+mongoose.connect(dbURI, { useNewUrlParser: true })
+.then( () => {
+  console.log("Conectado");
+})
+.catch( () => {
+  console.log("no Conectado");
+});
 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
