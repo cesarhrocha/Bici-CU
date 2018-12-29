@@ -2,6 +2,15 @@
   "name": "bici-cu",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.conf.json",
+    "start-server": "nodemon www",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",

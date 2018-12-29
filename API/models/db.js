@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = 'mongodb+srv://Fer:arbiter117@cluster0-64fqv.mongodb.net/test?retryWrites=true';
+ var dbURI = 'mongodb://localhost:27017/BiciCU';
+ // var dbURI = 'mongodb+srv://Fer:arbiter117@cluster0-64fqv.mongodb.net/test?retryWrites=true';
 
 
 mongoose.connect(dbURI, { useNewUrlParser: true })
